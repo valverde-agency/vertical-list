@@ -1,287 +1,132 @@
-* {
-    margin: 0;
-    padding: 0;
+
+.check {
+    background: url(img/check_backgr.jpeg), lightgray 50% / cover no-repeat;
+    width: 100%;
+    position: relative;
+    padding: 111px 0;
     box-sizing: border-box;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-h2 {
-    color: #313131;
-    font-family: Unbounded;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.slider {
-    display: flex;
-}
-
-.wrapper {
-    width: 794px;
-    position: relative;
-}
-
-.carousel {
-    font-size: 0;
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    scroll-behavior: smooth;
-}
-
-.wrapper .arrow {
-    top: 50%;
+.check::after {
+    content: "";
     position: absolute;
-    width: 27px;
-    height: 27px;
-    text-align: center;
-    line-height: 27px;
-    transform: translateY(-50%);
-}
-
-.wrapper .arrow:first-child {
-    left: 10px;
-}
-
-.wrapper .arrow:last-child {
-    right: 10px;
-}
-
-.carousel {
-    background-color: #03142B;
-}
-
-.carousel img {
-    width: 794px;
-    height: 530px;
-    object-fit: none;
-    animation-name: Appearance;
-    animation-duration: 0.6s;
-    animation-timing-function: ease-in-out;
-}
-
-@-webkit-keyframes Appearance {
-    0% {opacity: 0.5;}
-    100% {opacity: 1;}
-}
-
-@-o-keyframes Appearance {
-    0% {opacity: 0.5;}
-    100% {opacity: 1;}
-}
-
-@-moz-keyframes Appearance {
-    0% {opacity: 0.5;}
-    100% {opacity: 1;}
-}
-
-@keyframes Appearance {
-    0% {opacity: 0.5;}
-    100% {opacity: 1;}
-}
-
-.months {
-    position: relative;
-    width: 376px;
-    height: 530px;
-    background: #03142B;
-    margin-left: 10px;
-}
-
-.months .arrow {
-    position: absolute;
-    width: 350px;
-    height: 45px;
-    background: #03142B;
-}
-
-.months .arrow:last-child {
+    background-color: #03142b;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
 }
 
-.months .arrow svg  {
-    position: absolute;
-    left: 50%;
-    transform: translateY(-50%);
+.check__lists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    max-width: 1176px;
 }
 
-.months .arrow:first-child svg {
-    top: 24px;
-}
+.check__list {
+    margin: 75px 0 0;
+    list-style-type: none;
+    padding: 0;
 
-.months .arrow:last-child svg {
-    bottom: 14px;
-}
-
-.cards {
-    padding: 45px 19px 45px 24px;
-    width: 369px;
-    height: 530px;
-    overflow: hidden;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-}
-
-.cards::-webkit-scrollbar {
-    width: 5px;
-}
-
-.cards::-webkit-scrollbar-track {
-    background: #234471;
-    border-radius: 10px;
-    margin: 16px;
-}
-
-.cards::-webkit-scrollbar-thumb {
-    background: #25B; 
-    border-radius: 10px;
-    background-clip: padding-box;
-}
-
-.card {
+    height: 626px;
     display: flex;
     flex-direction: column;
-    width: 322px;
-    height: 110px;
-    padding: 22px 27px;
+    justify-content: space-between;
+}
+
+.check__info {
+    margin-left: 98px;
+    max-width: 725px;
+}
+
+.check__markers {
+    position: relative;
+}
+
+.check__markers::after {
+    content: "";
+    background-image: url(img/check.svg);
+    background-repeat: no-repeat;
+    background-size: 30px 636px;
+    position: absolute;
+    width: 30px;
+    height: 636px;
+    right: -60px;
+    top: 7px;
+}
+
+.check__marker {
     color: #fff;
-}
-
-.selected {
-    background: #25B;
-}
-
-.card .month-name {
-    color: #FFF;
-    font-family: Raleway;
-    font-size: 16px;
-    font-style: normal;
+    font-family: "Unbounded", sans-serif;
+    font-size: 30px;
     font-weight: 700;
-    line-height: normal;
+    text-align: right;
 }
 
-.card .month-description {
-    color: #FFF;
-    font-family: Raleway;
+.check__text {
+    color: #fff;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: 20px;
 }
 
-@media screen and (max-width: 1200px) {
-    h2 {
-        color: #313131;
-        font-family: Unbounded;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 700;
+.check__text_bold {
+    font-weight: 700;
+}
+
+@media (max-width: 1200px) {
+
+    .check {
+        padding: 78px 49px 59px;
+    }
+
+    .check__lists {
+        justify-content: center;
+    }
+
+    .check__list {
+        margin: 56px 0;
+    }
+
+    .check__info {
+        max-width: 523px;
+        margin-left: 88px;
+    }
+}
+
+@media (max-width: 767px) {
+    .check {
+        padding: 30px 18px;
+    }
+
+    .check__markers {
+        height: 611px;
+    }
+
+    .check__text {
+        font-size: 14px;
         line-height: normal;
     }
 
-    .wrapper {
-        width: 378px;
+    .check__info {
+        max-width: 216px;
+        margin-left: 61px;
+        margin-bottom: 13px;
+        height: 658px;
     }
 
-    .carousel img {
-        width: 378px;
+    .check__markers::after {
+        right: -44px;
+        top: -4px;
     }
 
-    .months {
-        width: 350px;
-    }
-
-    .cards {
-        width: 350px;
-        padding: 45px 30px 45px 28px;
-    }
-
-    .card {
-        width: 292px;
-    }
-
-    .cards::-webkit-scrollbar {
-        width: 0;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    h2 {
-        color: #313131;
-        text-align: center;
-        font-family: Unbounded;
+    .check__marker {
         font-size: 20px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-    }
-
-    .wrapper {
-        width: 360px;
-        height: 258px;
-    }
-
-    .wrapper .arrow:first-child {
-        left: 40px;
-    }
-
-    .wrapper .arrow:last-child {
-        right: 30px;
-    }
-
-    .carousel img {
-        width: 360px;
-        height: 258px;
-        object-fit: cover;
-    }
-
-    .months{
-        width: 360px;
-        height: 117px;
-        margin-left: 0;
-        margin-top: 7px;
-    }
-
-    .months .arrow {
-        width: 0;
-        height: 0;
-    }
-
-    .months .arrow:first-child {
-        transform: rotate(-90deg);
-        top: 65px;
-        left: 20px;
-    }
-
-    .months .arrow:last-child {
-        transform: rotate(-90deg);
-        right: 10px;
-        top: 65px;
-    }
-
-    .cards {
-        width: 360px;
-        height: 117px;
-        padding: 8px 47px 0 47px;
-        overflow-y: hidden;
-    }
-
-    .card {
-        padding: 20px 15px;
-    }
-
-    .selected {
-        background: none;
-    }
-
-    .slider {
-        flex-direction: column;
     }
 }
